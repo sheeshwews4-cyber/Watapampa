@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cesar Ian A. Sabanal | Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @layer base {
+            body {
+                background-color: #0B0D14;
+                color: #E8EAF0;
+                overflow-x: hidden;
+            }
+        }
+
+        .glass-card {
+            background: rgba(16, 19, 30, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 212, 255, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .energy-gradient {
+            background: linear-gradient(135deg, #00D4FF 0%, #8A2BE2 100%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00D4FF 0%, #8A2BE2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .skill-bar-fill {
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .typing-container::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Light trap border effect */
+        .light-trap {
+            position: relative;
+        }
+        .light-trap::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.05) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#1d1f27",
+                      "surface-container-highest": "#33343c",
+                      "on-surface-variant": "#bbc9cf",
+                      "on-secondary-container": "#dcb7ff",
+                      "tertiary": "#ffd9a1",
+                      "secondary": "#dcb8ff",
+                      "surface": "#11131a",
+                      "on-tertiary-container": "#6c4900",
+                      "surface-container-lowest": "#0c0e15",
+                      "surface-container-high": "#282a31",
+                      "inverse-surface": "#e2e2ec",
+                      "tertiary-fixed-dim": "#ffba3d",
+                      "surface-variant": "#33343c",
+                      "on-error": "#690005",
+                      "surface-tint": "#3cd7ff",
+                      "outline": "#859398",
+                      "surface-container-low": "#191b23",
+                      "surface-card": "#10131E",
+                      "error": "#ffb4ab",
+                      "primary-container": "#00d4ff",
+                      "on-primary-container": "#00586b",
+                      "on-background": "#e2e2ec",
+                      "on-tertiary": "#432c00",
+                      "secondary-fixed": "#efdbff",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#281900",
+                      "inverse-primary": "#00677e",
+                      "on-primary": "#003642",
+                      "accent-gradient": "linear-gradient(135deg, #00D4FF 0%, #8A2BE2 100%)",
+                      "on-primary-fixed-variant": "#004e5f",
+                      "tertiary-fixed": "#ffdeae",
+                      "secondary-container": "#7701d0",
+                      "outline-variant": "#3c494e",
+                      "primary-fixed": "#b4ebff",
+                      "text-primary": "#E8EAF0",
+                      "on-surface": "#e2e2ec",
+                      "on-secondary-fixed": "#2c0051",
+                      "on-secondary": "#480081",
+                      "primary": "#a8e8ff",
+                      "error-container": "#93000a",
+                      "primary-fixed-dim": "#3cd7ff",
+                      "on-tertiary-fixed-variant": "#604100",
+                      "secondary-fixed-dim": "#dcb8ff",
+                      "text-muted": "#6B7280",
+                      "tertiary-container": "#feb528",
+                      "on-secondary-fixed-variant": "#6700b5",
+                      "surface-dim": "#11131a",
+                      "inverse-on-surface": "#2e3038",
+                      "background": "#11131a",
+                      "surface-bright": "#373941",
+                      "on-primary-fixed": "#001f27"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "max-width": "1280px",
+                      "base": "8px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "80px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": ["Space Grotesk"],
+                      "button-text": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-md": ["Space Grotesk"],
+                      "display-lg": ["Space Grotesk"],
+                      "body-lg": ["Inter"],
+                      "label-mono": ["Space Mono"]
+              },
+              "fontSize": {
+                      "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "button-text": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-mono": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="font-body-md text-body-md">
+<!-- Background Shader -->
+
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/10 h-20">
+<nav class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-full">
+<a class="font-display-lg-mobile text-headline-md font-bold text-primary tracking-tighter" href="#">CISA.</a>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#skills">Skills</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#services">Services</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#projects">Projects</a>
+<a class="px-6 py-2 energy-gradient rounded-full font-button-text text-button-text text-on-primary-container hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] transition-all active:scale-95" href="#contact">Hire Me</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center justify-center pt-20 px-margin-mobile">
+<div class="text-center max-w-4xl reveal">
+<div class="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/10 mb-8">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-widest">Available for Freelance</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6">
+                    I am <span class="text-gradient">Cesar Ian A. Sabanal</span>
+</h1>
+<div class="h-12 mb-8">
+<p class="typing-container font-headline-md text-headline-md text-on-surface-variant" id="typing-text"></p>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">
+                    Virtual Assistant | Graphic Designer | Short-form Video Editor | IT &amp; Electronics Graduate. Bridging technical expertise with creative precision.
+                </p>
+<div class="flex flex-col sm:flex-row gap-gutter justify-center items-center">
+<a class="w-full sm:w-auto px-10 py-4 energy-gradient rounded-xl font-button-text text-button-text text-on-primary-container text-lg hover:shadow-[0_0_30px_rgba(0,212,255,0.5)] transition-all" href="#contact">Get In Touch</a>
+<a class="w-full sm:w-auto px-10 py-4 glass-card rounded-xl font-button-text text-button-text text-white text-lg flex items-center justify-center gap-2" href="#projects">
+                        View Projects <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-32 px-margin-mobile" id="about">
+<div class="max-w-max-width mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div class="reveal">
+<h2 class="font-display-lg text-headline-md text-primary mb-8 tracking-tight">Technical Rooted, Creative Driven.</h2>
+<div class="space-y-6 text-on-surface-variant font-body-lg">
+<p>
+                                I am an Information Technology and Electronics Technology graduate who has seamlessly transitioned into the digital creative space. My background provides a unique "under-the-hood" understanding of the tools I use daily.
+                            </p>
+<p>
+                                As a Virtual Assistant, I bring administrative precision and technical troubleshooting skills. In the creative realm, I specialize in crafting high-impact graphic designs and fast-paced short-form video content tailored for modern social algorithms.
+                            </p>
+<div class="grid grid-cols-2 gap-4 pt-8">
+<div class="glass-card p-4 rounded-xl light-trap">
+<h4 class="text-primary font-bold text-2xl mb-1">99%</h4>
+<p class="text-xs uppercase tracking-tighter text-on-surface-variant">Efficiency Rate</p>
+</div>
+<div class="glass-card p-4 rounded-xl light-trap">
+<h4 class="text-primary font-bold text-2xl mb-1">50+</h4>
+<p class="text-xs uppercase tracking-tighter text-on-surface-variant">Projects Delivered</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative reveal delay-200">
+<div class="aspect-square glass-card rounded-3xl overflow-hidden light-trap relative group">
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-40"></div>
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a tech-savvy creative professional with a modern studio background. The lighting is moody with subtle cyan and purple rim lights, reflecting a high-end graphic designer and IT expert aesthetic. Clean, minimalist composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQTo-PqRIJNEr6MEFLjKSxbkeSpHwRL4JhQSnucsO-KXFLozrCIkoZL1xebZLLznhbTzgKczndoX58wZNUK-XaCOxTTuimfGqw0xu3Jn6w-BP2DIPlqLPnzF_ujINqLr6TQUnVxj4peIWnc0TvWcGyBDoYFSCNvwzVX0X7jmCCTq5hgJudE_IO0Nar-0vkrVR0K4CoriHSsQvGDhfBJvuUbTf97PzIDOQc-Cv2IapQ39m_3uXC6PHF"/>
+</div>
+<div class="absolute -bottom-6 -right-6 p-6 glass-card rounded-2xl light-trap hidden md:block">
+<span class="material-symbols-outlined text-4xl text-primary mb-2">verified</span>
+<p class="text-sm font-label-mono">Certified Tech Specialist</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-32 bg-surface-container-lowest/50" id="skills">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-20 reveal">
+<h2 class="font-display-lg text-headline-md text-white mb-4">Core Competencies</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">A multi-disciplinary toolkit built on technical foundation and creative intuition.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Creative Skills -->
+<div class="glass-card p-8 rounded-3xl reveal light-trap">
+<div class="w-12 h-12 energy-gradient rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white">palette</span>
+</div>
+<h3 class="font-headline-md text-xl text-white mb-6">Creative Design</h3>
+<div class="space-y-6">
+<div class="skill-group">
+<div class="flex justify-between mb-2"><span class="text-sm font-label-mono">Graphic Design</span><span class="text-sm text-primary">95%</span></div>
+<div class="h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="skill-bar-fill h-full energy-gradient" data-percent="95"></div>
+</div>
+</div>
+<div class="skill-group">
+<div class="flex justify-between mb-2"><span class="text-sm font-label-mono">Video Editing</span><span class="text-sm text-primary">90%</span></div>
+<div class="h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="skill-bar-fill h-full energy-gradient" data-percent="90"></div>
+</div>
+</div>
+<div class="skill-group">
+<div class="flex justify-between mb-2"><span class="text-sm font-label-mono">Canva/Photoshop</span><span class="text-sm text-primary">88%</span></div>
+<div class="h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="skill-bar-fill h-full energy-gradient" data-percent="88"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Admin Skills -->
+<div class="glass-card p-8 rounded-3xl reveal delay-100 light-trap">
+<div class="w-12 h-12 energy-gradient rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white">admin_panel_settings</span>
+</div>
+<h3 class="font-headline-md text-xl text-white mb-6">Admin &amp; Operations</h3>
+<div class="space-y-6">
+<div class="skill-group">
+<div class="flex justify-between mb-2"><span class="text-sm font-label-mono">Data Entry</span><span class="text-sm text-primary">98%</span></div>
+<div class="h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="skill-bar-fill h-full energy-gradient" data-percent="98"></div>
+</div>
+</div>
+<div class="skill-group">
+<div class="flex justify-between mb-2"><span class="text-sm font-label-mono">Email Management</span><span class="text-sm text-primary">92%</span></div>
+<div class="h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="skill-bar-fill h-full energy-gradient" data-percent="92"></div>
+</div>
+</div>
+<div class="skill-group">
+<div class="flex justify-between mb-2"><span class="text-sm font-label-mono">Market Research</span><span class="text-sm text-primary">85%</span></div>
+<div class="h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="skill-bar-fill h-full energy-gradient" data-percent="85"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Technical Skills -->
+<div class="glass-card p-8 rounded-3xl reveal delay-200 light-trap">
+<div class="w-12 h-12 energy-gradient rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white">terminal</span>
+</div>
+<h3 class="font-headline-md text-xl text-white mb-6">Technical Stack</h3>
+<div class="space-y-6">
+<div class="skill-group">
+<div class="flex justify-between mb-2"><span class="text-sm font-label-mono">HTML/CSS/JS</span><span class="text-sm text-primary">75%</span></div>
+<div class="h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="skill-bar-fill h-full energy-gradient" data-percent="75"></div>
+</div>
+</div>
+<div class="skill-group">
+<div class="flex justify-between mb-2"><span class="text-sm font-label-mono">Google Workspace</span><span class="text-sm text-primary">96%</span></div>
+<div class="h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="skill-bar-fill h-full energy-gradient" data-percent="96"></div>
+</div>
+</div>
+<div class="skill-group">
+<div class="flex justify-between mb-2"><span class="text-sm font-label-mono">Troubleshooting</span><span class="text-sm text-primary">90%</span></div>
+<div class="h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="skill-bar-fill h-full energy-gradient" data-percent="90"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-32 px-margin-mobile" id="services">
+<div class="max-w-max-width mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-20 reveal">
+<div class="max-w-xl">
+<h2 class="font-display-lg text-headline-md text-white mb-4">Service Offerings</h2>
+<p class="text-on-surface-variant">Tailored solutions for entrepreneurs and brands seeking administrative relief and visual excellence.</p>
+</div>
+<div class="mt-8 md:mt-0">
+<a class="text-primary font-label-mono flex items-center gap-2 hover:gap-4 transition-all" href="#contact">Request Quote <span class="material-symbols-outlined">east</span></a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="glass-card p-6 rounded-2xl reveal">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">support_agent</span>
+<h4 class="text-lg font-bold text-white mb-2">Virtual Assistance</h4>
+<p class="text-sm text-on-surface-variant">Streamlining your workflow with calendar management, data entry, and research.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl reveal delay-100">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">brush</span>
+<h4 class="text-lg font-bold text-white mb-2">Graphic Design</h4>
+<p class="text-sm text-on-surface-variant">Premium social media assets, branding elements, and marketing materials.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl reveal delay-200">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">movie_edit</span>
+<h4 class="text-lg font-bold text-white mb-2">Video Editing</h4>
+<p class="text-sm text-on-surface-variant">Dynamic TikToks, Reels, and Shorts designed for engagement and retention.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl reveal delay-300">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">devices</span>
+<h4 class="text-lg font-bold text-white mb-2">Technical Support</h4>
+<p class="text-sm text-on-surface-variant">Leveraging IT knowledge for software setup and technical troubleshooting.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Bento Grid -->
+<section class="py-32 bg-surface-container-low/30 px-margin-mobile" id="projects">
+<div class="max-w-max-width mx-auto">
+<div class="text-center mb-20 reveal">
+<h2 class="font-display-lg text-headline-md text-white">Selected Works</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
+<!-- Large Project 1 -->
+<div class="md:col-span-8 md:row-span-2 glass-card rounded-3xl overflow-hidden relative group reveal">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBiK81Sxm-mYyDYyvGbFbHM-D7nyqfohWwWNzTLDwK3CuDGkaIwYBLZKRbjZXXXMCTOluUaJqeEzth3FNPZGPnG_c45Y5nq3PaDddAnIRSa_NG82SbOZgjQVFzcoNtgBAJRA2b5NnD61n2Ro6-jYr2b5GOzrnOXfA1iNyC70sIqf-A-XPv_Eg-g7RPZS6I1MBdRmhzyg-QkVdr1MfdGIlw7-d-ftzeTjAd9NXmNVx-vrl7e1KhJ7kl"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-10 flex flex-col justify-end">
+<span class="font-label-mono text-xs text-primary mb-2">Graphic Design</span>
+<h3 class="text-2xl font-bold text-white mb-2">Branding Portfolio</h3>
+<p class="text-on-surface-variant max-w-md">Comprehensive brand identity design for modern digital startups.</p>
+</div>
+</div>
+<!-- Small Project 1 -->
+<div class="md:col-span-4 glass-card rounded-3xl overflow-hidden relative group reveal delay-100">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY_RpDL7zV7IswDq30bTs9VDOAeVsiiECLQNl3_LhnF7TOrjBhJShFF12-me-mzL5hS74necr0N-pWneJpgecqNm1OKD6ZlneB5Xas_-9rugm1C-NM56I5D_L2PQbxSLKA_23dDC5-JiR8sxgSKWM4lfdIvkHnXXlKTZpmel7ALVud1732y3wGoHRuRauxMFzkvtnKaTeK4vbtwAilXQgS7lrxSCJN6tny5je6s-Fm6yUhUcEQK_rX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<span class="font-label-mono text-xs text-primary">Social Media</span>
+<h3 class="text-lg font-bold text-white">Ad Campaigns</h3>
+</div>
+</div>
+<!-- Small Project 2 -->
+<div class="md:col-span-4 glass-card rounded-3xl overflow-hidden relative group reveal delay-200">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkhivuQka61ugpY5FRkE6pI_6INiZt0idy3Y3JYH2mmxoTATDapVP7rzjg8AWyIzYrhZEvUjXfNB3mme6LiLSB5EiiKNgovpDQio-7xt4leu16SgeDWBlcvv4EcRGg_m_ASogoE98zYkNxfUV6LKrL609ylOPZ44VsrKakWpaaxfXAdD-EwBQSQ5Ma_hvVpLKM4fESj4L1e3TV4VhwnAbizjLl9FrGM0tvuGq6QCiZs1szHRgrlI9N"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<span class="font-label-mono text-xs text-primary">Editing</span>
+<h3 class="text-lg font-bold text-white">Viral Short-form</h3>
+</div>
+</div>
+<!-- Half Width Project -->
+<div class="md:col-span-12 glass-card rounded-3xl overflow-hidden relative group h-80 reveal delay-300">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARkE_0sAEVkJM2JPQvb9AX5Q_YhKg_T-QJzZ89e67noWsrAhccaBhsX62TcrSFXNaTPnIbI1U2EwSrgzFfVzrBrz4T61LPZ8cUgO7p6RhAkACaX7D54xH1QWif87GHH5dJ_hRJKQp_cTILfUDJWsmXmOWUA-P0OvEk2pLTU6ZdWTxRIOe2ZK_WIKsEbBloEUcA5iQNUH3lpGy3VFFj39l8swI-Iv-fIOtSdBy0ElvQZZefUwaHtFkN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-10 flex items-center justify-between">
+<div class="max-w-xl">
+<span class="font-label-mono text-xs text-primary mb-2">Web Development</span>
+<h3 class="text-3xl font-bold text-white mb-2">Personal Ecosystem</h3>
+<p class="text-on-surface-variant">Custom built portfolio showcasing IT and technical integration skills.</p>
+</div>
+<a class="w-16 h-16 rounded-full energy-gradient flex items-center justify-center text-on-primary-container shadow-xl" href="#">
+<span class="material-symbols-outlined">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience & Education -->
+<section class="py-32 px-margin-mobile">
+<div class="max-w-max-width mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+<div class="reveal">
+<h3 class="font-headline-md text-2xl text-white mb-10 flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">work</span> Experience
+                        </h3>
+<div class="space-y-12">
+<div class="relative pl-8 before:absolute before:left-0 before:top-2 before:bottom-0 before:w-0.5 before:bg-outline-variant">
+<span class="font-label-mono text-sm text-primary mb-1 block">Present</span>
+<h4 class="text-lg font-bold text-white">Freelance Video Editor</h4>
+<p class="text-on-surface-variant text-sm">Managing short-form content for diverse creators, focusing on retention and viral potential.</p>
+</div>
+<div class="relative pl-8 before:absolute before:left-0 before:top-2 before:bottom-0 before:w-0.5 before:bg-outline-variant">
+<span class="font-label-mono text-sm text-primary mb-1 block">2022 - 2023</span>
+<h4 class="text-lg font-bold text-white">Freelance Graphic Designer</h4>
+<p class="text-on-surface-variant text-sm">Created branding kits and social media assets for small to medium businesses.</p>
+</div>
+<div class="relative pl-8 before:absolute before:left-0 before:top-2 before:bottom-0 before:w-0.5 before:bg-outline-variant">
+<span class="font-label-mono text-sm text-primary mb-1 block">2021 - 2022</span>
+<h4 class="text-lg font-bold text-white">Entry-Level VA</h4>
+<p class="text-on-surface-variant text-sm">Handled complex data entry tasks and calendar coordination for high-pace executives.</p>
+</div>
+</div>
+</div>
+<div class="reveal delay-200">
+<h3 class="font-headline-md text-2xl text-white mb-10 flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">school</span> Education
+                        </h3>
+<div class="space-y-8">
+<div class="glass-card p-6 rounded-2xl light-trap">
+<h4 class="text-lg font-bold text-white mb-1">Bachelor of Science in Information Technology</h4>
+<p class="text-on-surface-variant text-sm mb-2">Academic Excellence Award</p>
+<span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label-mono">Systems &amp; Network</span>
+</div>
+<div class="glass-card p-6 rounded-2xl light-trap">
+<h4 class="text-lg font-bold text-white mb-1">Electronics Technology</h4>
+<p class="text-on-surface-variant text-sm mb-2">Technical Vocational Certification</p>
+<span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label-mono">Hardware Specialists</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 px-margin-mobile relative" id="contact">
+<div class="max-w-4xl mx-auto">
+<div class="glass-card p-12 rounded-[2rem] light-trap relative overflow-hidden reveal">
+<!-- Subtle Glow -->
+<div class="absolute -top-24 -right-24 w-64 h-64 energy-gradient rounded-full blur-[100px] opacity-20"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<h2 class="font-display-lg text-headline-md text-white mb-6">Let's Build Something.</h2>
+<p class="text-on-surface-variant mb-8">Ready to elevate your digital presence or optimize your workflow? Reach out today.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<span class="text-on-surface">ceian@example.com</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">call</span>
+</div>
+<span class="text-on-surface">+63 9xx xxx xxxx</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<span class="text-on-surface">Philippines</span>
+</div>
+</div>
+</div>
+<form class="space-y-4">
+<input class="w-full bg-surface-container/50 border border-white/10 rounded-xl px-6 py-4 focus:border-primary focus:ring-0 transition-colors text-white font-label-mono placeholder:text-on-surface-variant/40" placeholder="Full Name" type="text"/>
+<input class="w-full bg-surface-container/50 border border-white/10 rounded-xl px-6 py-4 focus:border-primary focus:ring-0 transition-colors text-white font-label-mono placeholder:text-on-surface-variant/40" placeholder="Email Address" type="email"/>
+<textarea class="w-full bg-surface-container/50 border border-white/10 rounded-xl px-6 py-4 focus:border-primary focus:ring-0 transition-colors text-white font-label-mono placeholder:text-on-surface-variant/40" placeholder="Your Message" rows="4"></textarea>
+<button class="w-full py-4 energy-gradient rounded-xl font-button-text text-button-text text-on-primary-container font-bold hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-all">Send Message</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="py-20 border-t border-white/10 bg-surface-container-lowest">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div>
+<h3 class="font-display-lg text-headline-md text-white font-bold mb-2">CISA.</h3>
+<p class="text-on-surface-variant font-label-mono text-sm">Precision in Motion.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Dribbble</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Twitter</a>
+</div>
+</div>
+<div class="mt-20 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-label-mono text-on-surface-variant/40">
+<p>© 2024 Cesar Ian A. Sabanal. All rights reserved.</p>
+<div class="flex gap-6">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Typing Effect
+        const words = ["Virtual Assistant", "Graphic Designer", "Short-form Video Editor"];
+        let i = 0;
+        let j = 0;
+        let currentWord = "";
+        let isDeleting = false;
+
+        function type() {
+            currentWord = words[i];
+            if (isDeleting) {
+                document.getElementById("typing-text").textContent = currentWord.substring(0, j - 1);
+                j--;
+                if (j == 0) {
+                    isDeleting = false;
+                    i++;
+                    if (i == words.length) i = 0;
+                }
+            } else {
+                document.getElementById("typing-text").textContent = currentWord.substring(0, j + 1);
+                j++;
+                if (j == currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(type, 1500); // Pause at end
+                    return;
+                }
+            }
+            setTimeout(type, isDeleting ? 50 : 100);
+        }
+        type();
+
+        // Scroll Reveal
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Animate skill bars if it's the skills section
+                    const bars = entry.target.querySelectorAll('.skill-bar-fill');
+                    bars.forEach(bar => {
+                        const percent = bar.getAttribute('data-percent');
+                        bar.style.width = percent + '%';
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Sticky Nav Blur Change
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-surface/90', 'shadow-2xl');
+                header.classList.remove('bg-surface/60');
+            } else {
+                header.classList.remove('bg-surface/90', 'shadow-2xl');
+                header.classList.add('bg-surface/60');
+            }
+        });
+    </script>
+</body></html>
