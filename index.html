@@ -397,9 +397,13 @@
 .gd-posters a { display: block; border-radius: 12px; overflow: hidden; transition: transform .3s ease; }
 .gd-posters a:hover { transform: translateY(-4px) scale(1.02); }
 .gd-posters img { display: block; width: 100%; height: auto; }
-@media (max-width: 640px) { .gd-posters { grid-template-columns: 1fr; } }
+@media (max-width: 767px) {
+  #projects .grid { grid-auto-rows: minmax(300px, auto) !important; }
+  .gd-inner { position: relative !important; inset: auto !important; overflow: visible !important; }
+}
+@media (max-width: 640px) { .gd-posters { grid-template-columns: 1fr; gap: 1rem; } }
 </style>
-<div class="absolute inset-0 p-6 flex flex-col justify-center gap-6 overflow-y-auto">
+<div class="gd-inner absolute inset-0 p-6 flex flex-col justify-center gap-6 overflow-y-auto">
 <div class="gd-posters">
 <a href="ICE%20VANILLA.png" target="_blank" rel="noopener"><img src="ICE%20VANILLA.png" alt="Ice Vanilla Latte beverage promo poster" loading="lazy"></a>
 <a href="MIC%20NIGHT.png" target="_blank" rel="noopener"><img src="MIC%20NIGHT.png" alt="Mic Night live music event poster" loading="lazy"></a>
