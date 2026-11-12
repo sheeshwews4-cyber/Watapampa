@@ -391,42 +391,54 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
 <!-- Large Project 1 -->
-<div class="md:col-span-8 md:row-span-2 glass-card rounded-3xl overflow-hidden relative group reveal">
+<div class="md:col-span-12 glass-card rounded-3xl overflow-hidden relative group reveal">
 <style>
-.gd-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: .6rem; align-items: center; width: 100%; max-width: 540px; margin: 0 auto; }
-.gd-grid a { grid-column: span 2; display: block; border-radius: 10px; overflow: hidden; transition: transform .3s ease; }
-.gd-grid a:nth-child(4) { grid-column: 2 / span 2; }
-.gd-grid a:nth-child(5) { grid-column: 4 / span 2; }
-.gd-grid a:hover { transform: translateY(-4px) scale(1.03); }
-.gd-grid img { display: block; width: 100%; height: auto; }
-.gd-hint { font-size: .7rem; opacity: .5; }
-@media (max-width: 767px) {
-  #projects .grid { grid-auto-rows: minmax(300px, auto) !important; }
-  .gd-inner { position: relative !important; inset: auto !important; overflow: visible !important; }
-}
-@media (max-width: 640px) {
-  .gd-grid { grid-template-columns: repeat(2, 1fr); max-width: 420px; }
-  .gd-grid a, .gd-grid a:nth-child(4) { grid-column: auto; }
-  .gd-grid a:nth-child(5) { grid-column: 1 / -1; width: calc(50% - .3rem); justify-self: center; }
-}
+#projects .grid { grid-auto-rows: minmax(300px, auto) !important; }
+.gd-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.gd-head-title { display: flex; align-items: center; gap: .75rem; }
+.gd-head-title svg { width: 24px; height: 24px; color: #fff; flex: none; }
+.gd-pill { border: 1px solid rgba(255,255,255,.3); color: #fff; font-size: .85rem; font-weight: 600; padding: .5rem 1rem; border-radius: 10px; }
+.gd-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+.gd-tile { display: block; text-decoration: none; color: inherit; }
+.gd-thumb { border-radius: 12px; overflow: hidden; background: #0d0f14; transition: transform .3s ease, box-shadow .3s ease; }
+.gd-tile:hover .gd-thumb { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,.45); }
+.gd-frame { aspect-ratio: 4 / 5; display: flex; align-items: center; background: #0d0f14; }
+.gd-frame img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.gd-bar { background: #26bbff; color: #0b0e14; text-align: center; font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: .45rem .25rem; }
+.gd-name { margin: .8rem 0 .15rem; font-size: .95rem; font-weight: 700; color: #fff; }
+.gd-sub { margin: 0; font-size: .8rem; color: #9ca3af; line-height: 1.4; }
+@media (max-width: 1023px) { .gd-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .gd-grid { grid-template-columns: repeat(2, 1fr); gap: .75rem; } }
 </style>
-<div class="gd-inner absolute inset-0 p-6 flex flex-col justify-center gap-5 overflow-y-auto">
+<div class="p-6 md:p-8 flex flex-col gap-6">
+<div class="gd-head">
+<div class="gd-head-title">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+<h3 class="text-xl font-bold text-white">Graphic Design Works</h3>
+</div>
+<span class="gd-pill">Click a poster to view full size</span>
+</div>
 <div class="gd-grid">
-<a href="ICE%20VANILLA.png" target="_blank" rel="noopener"><img src="ICE%20VANILLA.png" width="1080" height="1080" alt="Ice Vanilla Latte beverage promo poster" loading="lazy"></a>
-<a href="MIC%20NIGHT.png" target="_blank" rel="noopener"><img src="MIC%20NIGHT.png" width="1080" height="1350" alt="Mic Night live music event poster" loading="lazy"></a>
-<a href="SALE%20IS%20ON.png" target="_blank" rel="noopener"><img src="SALE%20IS%20ON.png" width="1080" height="1350" alt="Sale Is On streetwear sale ad" loading="lazy"></a>
-<a href="SPAGHETTI.png" target="_blank" rel="noopener"><img src="SPAGHETTI.png" width="1080" height="1350" alt="Spaghetti food promo poster" loading="lazy"></a>
-<a href="FEEL_THE_BEAT.png" target="_blank" rel="noopener"><img src="FEEL_THE_BEAT.png" width="1080" height="1350" alt="Feel the Beat Soundcore V1 headphones ad" loading="lazy"></a>
-</div>
-<div>
-<span class="font-label-mono text-xs text-primary mb-2">Graphic Design</span>
-<h3 class="text-2xl font-bold text-white mb-2">Graphic Design Works</h3>
-<p class="text-on-surface-variant max-w-md">Social media posts, event posters, and promo ads for cafes, food, live events, tech, and streetwear brands.</p>
-<p class="gd-hint mt-2">Click a poster to view it in full size.</p>
-</div>
-</div>
-</div>
-
+<a class="gd-tile" href="ICE%20VANILLA.png" target="_blank" rel="noopener">
+<div class="gd-thumb"><div class="gd-frame"><img src="ICE%20VANILLA.png" width="1080" height="1080" alt="Ice Vanilla Latte beverage promo poster" loading="lazy"></div><div class="gd-bar">Beverage Promo</div></div>
+<h4 class="gd-name">Ice Vanilla Latte</h4><p class="gd-sub">Refreshing cafe promo post</p>
+</a>
+<a class="gd-tile" href="MIC%20NIGHT.png" target="_blank" rel="noopener">
+<div class="gd-thumb"><div class="gd-frame"><img src="MIC%20NIGHT.png" width="1080" height="1350" alt="Mic Night live music event poster" loading="lazy"></div><div class="gd-bar">Event Poster</div></div>
+<h4 class="gd-name">Mic Night</h4><p class="gd-sub">Live music event poster</p>
+</a>
+<a class="gd-tile" href="SALE%20IS%20ON.png" target="_blank" rel="noopener">
+<div class="gd-thumb"><div class="gd-frame"><img src="SALE%20IS%20ON.png" width="1080" height="1350" alt="Sale Is On streetwear sale ad" loading="lazy"></div><div class="gd-bar">Social Media Ad</div></div>
+<h4 class="gd-name">Sale Is On</h4><p class="gd-sub">Streetwear sale campaign</p>
+</a>
+<a class="gd-tile" href="SPAGHETTI.png" target="_blank" rel="noopener">
+<div class="gd-thumb"><div class="gd-frame"><img src="SPAGHETTI.png" width="1080" height="1350" alt="Spaghetti food promo poster" loading="lazy"></div><div class="gd-bar">Food Promo</div></div>
+<h4 class="gd-name">Eat Your Favorite Spaghetti</h4><p class="gd-sub">Limited time food offer</p>
+</a>
+<a class="gd-tile" href="FEEL_THE_BEAT.png" target="_blank" rel="noopener">
+<div class="gd-thumb"><div class="gd-frame"><img src="FEEL_THE_BEAT.png" width="1080" height="1350" alt="Feel the Beat Soundcore V1 headphones ad" loading="lazy"></div><div class="gd-bar">Product Ad</div></div>
+<h4 class="gd-name">Feel the Beat</h4><p class="gd-sub">Soundcore V1 headphones</p>
+</a>
 </div>
 </div>
 </div>
