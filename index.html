@@ -445,15 +445,60 @@
 
 
 <!-- Small Project 1 -->
-<div class="md:col-span-4 glass-card rounded-3xl overflow-hidden relative group reveal delay-100">
-<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY_RpDL7zV7IswDq30bTs9VDOAeVsiiECLQNl3_LhnF7TOrjBhJShFF12-me-mzL5hS74necr0N-pWneJpgecqNm1OKD6ZlneB5Xas_-9rugm1C-NM56I5D_L2PQbxSLKA_23dDC5-JiR8sxgSKWM4lfdIvkHnXXlKTZpmel7ALVud1732y3wGoHRuRauxMFzkvtnKaTeK4vbtwAilXQgS7lrxSCJN6tny5je6s-Fm6yUhUcEQK_rX"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
-<span class="font-label-mono text-xs text-primary">Social Media</span>
-<h3 class="text-lg font-bold text-white">Ad Campaigns</h3>
+<div class="md:col-span-12 glass-card rounded-3xl overflow-hidden relative group reveal delay-100">
+<style>
+#projects .grid { grid-auto-rows: minmax(300px, auto) !important; }
+.gd-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.gd-head-title { display: flex; align-items: center; gap: .75rem; }
+.gd-head-title svg { width: 24px; height: 24px; color: #fff; flex: none; }
+.gd-pill { border: 1px solid rgba(255,255,255,.3); color: #fff; font-size: .85rem; font-weight: 600; padding: .5rem 1rem; border-radius: 10px; }
+.gd-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+.gd-tile { display: block; text-decoration: none; color: inherit; }
+.gd-thumb { border-radius: 12px; overflow: hidden; background: #0d0f14; transition: transform .3s ease, box-shadow .3s ease; }
+.gd-tile:hover .gd-thumb { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,.45); }
+.gd-frame { aspect-ratio: 4 / 5; display: flex; align-items: center; background: #0d0f14; }
+.gd-frame img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.gd-bar { background: #26bbff; color: #0b0e14; text-align: center; font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: .45rem .25rem; }
+.gd-name { margin: .8rem 0 .15rem; font-size: .95rem; font-weight: 700; color: #fff; }
+.gd-sub { margin: 0; font-size: .8rem; color: #9ca3af; line-height: 1.4; }
+@media (max-width: 1023px) { .gd-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .gd-grid { grid-template-columns: repeat(2, 1fr); gap: .75rem; } }
+</style>
+<div class="p-6 md:p-8 flex flex-col gap-6">
+<div class="gd-head">
+<div class="gd-head-title">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/></svg>
+<h3 class="text-xl font-bold text-white">Graphic Design Works AI</h3>
+</div>
+<span class="gd-pill">Click a poster to view full size</span>
+</div>
+<div class="gd-grid">
+<a class="gd-tile" href="valore.png" target="_blank" rel="noopener">
+<div class="gd-thumb"><div class="gd-frame"><img src="valore.png" width="1080" height="1350" alt="Valoré Fragrances perfume ad" loading="lazy"></div><div class="gd-bar">Fragrance Ad</div></div>
+<h4 class="gd-name">Valoré Fragrances</h4><p class="gd-sub">Elevate Your Presence</p>
+</a>
+<a class="gd-tile" href="grandview.png" target="_blank" rel="noopener">
+<div class="gd-thumb"><div class="gd-frame"><img src="grandview.png" width="1080" height="1350" alt="The Grandview Hotel and Resort ad" loading="lazy"></div><div class="gd-bar">Hotel Ad</div></div>
+<h4 class="gd-name">The Grandview</h4><p class="gd-sub">Hotel &amp; Resort, a living experience</p>
+</a>
+<a class="gd-tile" href="redragon.png" target="_blank" rel="noopener">
+<div class="gd-thumb"><div class="gd-frame"><img src="redragon.png" width="1080" height="1350" alt="Redragon K552 RGB mechanical keyboard ad" loading="lazy"></div><div class="gd-bar">Product Ad</div></div>
+<h4 class="gd-name">Redragon K552</h4><p class="gd-sub">RGB mechanical keyboard</p>
+</a>
+<a class="gd-tile" href="nexora.png" target="_blank" rel="noopener">
+<div class="gd-thumb"><div class="gd-frame"><img src="nexora.png" width="1080" height="1350" alt="Nexora Clothing Co. fashion ad" loading="lazy"></div><div class="gd-bar">Fashion Ad</div></div>
+<h4 class="gd-name">Nexora Clothing Co.</h4><p class="gd-sub">Wear the Vision</p>
+</a>
+<a class="gd-tile" href="goodbite.png" target="_blank" rel="noopener">
+<div class="gd-thumb"><div class="gd-frame"><img src="goodbite.png" width="1080" height="1350" alt="The Good Bite restaurant menu design" loading="lazy"></div><div class="gd-bar">Menu Design</div></div>
+<h4 class="gd-name">The Good Bite</h4><p class="gd-sub">Restaurant menu design</p>
+</a>
 </div>
 </div>
+</div>
+
 <!-- Small Project 2 -->
-<div class="md:col-span-4 glass-card rounded-3xl overflow-hidden relative group reveal delay-200">
+<div class="md:col-span-12 glass-card rounded-3xl overflow-hidden relative group reveal delay-200">
 <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkhivuQka61ugpY5FRkE6pI_6INiZt0idy3Y3JYH2mmxoTATDapVP7rzjg8AWyIzYrhZEvUjXfNB3mme6LiLSB5EiiKNgovpDQio-7xt4leu16SgeDWBlcvv4EcRGg_m_ASogoE98zYkNxfUV6LKrL609ylOPZ44VsrKakWpaaxfXAdD-EwBQSQ5Ma_hvVpLKM4fESj4L1e3TV4VhwnAbizjLl9FrGM0tvuGq6QCiZs1szHRgrlI9N"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
 <span class="font-label-mono text-xs text-primary">Editing</span>
