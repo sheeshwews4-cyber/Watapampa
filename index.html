@@ -393,29 +393,33 @@
 <!-- Large Project 1 -->
 <div class="md:col-span-8 md:row-span-2 glass-card rounded-3xl overflow-hidden relative group reveal">
 <style>
-.gd-posters { display: grid; grid-template-columns: 1fr .8fr .8fr; gap: .75rem; align-items: center; }
-.gd-posters a { display: block; border-radius: 12px; overflow: hidden; transition: transform .3s ease; }
-.gd-posters a:hover { transform: translateY(-4px) scale(1.02); }
-.gd-posters img { display: block; width: 100%; height: auto; }
+.gd-strip { display: flex; gap: .75rem; height: 380px; overflow-x: auto; overflow-y: hidden; padding: 6px 2px .75rem; scroll-snap-type: x proximity; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+.gd-strip a { flex: 0 0 auto; height: 100%; display: block; border-radius: 12px; overflow: hidden; scroll-snap-align: start; transition: transform .3s ease; }
+.gd-strip a:hover { transform: translateY(-4px); }
+.gd-strip img { display: block; height: 100%; width: auto; max-width: none; }
+.gd-hint { font-size: .7rem; opacity: .55; margin-top: -.5rem; }
 @media (max-width: 767px) {
   #projects .grid { grid-auto-rows: minmax(300px, auto) !important; }
   .gd-inner { position: relative !important; inset: auto !important; overflow: visible !important; }
+  .gd-strip { height: 340px; }
 }
-@media (max-width: 640px) { .gd-posters { grid-template-columns: 1fr; gap: 1rem; } }
 </style>
 <div class="gd-inner absolute inset-0 p-6 flex flex-col justify-center gap-6 overflow-y-auto">
-<div class="gd-posters">
-<a href="ICE%20VANILLA.png" target="_blank" rel="noopener"><img src="ICE%20VANILLA.png" alt="Ice Vanilla Latte beverage promo poster" loading="lazy"></a>
-<a href="MIC%20NIGHT.png" target="_blank" rel="noopener"><img src="MIC%20NIGHT.png" alt="Mic Night live music event poster" loading="lazy"></a>
-<a href="SALE%20IS%20ON.png" target="_blank" rel="noopener"><img src="SALE%20IS%20ON.png" alt="Sale Is On streetwear sale ad" loading="lazy"></a>
+<div class="gd-strip">
+<a href="ICE%20VANILLA.png" target="_blank" rel="noopener"><img src="ICE%20VANILLA.png" width="1080" height="1080" alt="Ice Vanilla Latte beverage promo poster" loading="lazy"></a>
+<a href="MIC%20NIGHT.png" target="_blank" rel="noopener"><img src="MIC%20NIGHT.png" width="1080" height="1350" alt="Mic Night live music event poster" loading="lazy"></a>
+<a href="SALE%20IS%20ON.png" target="_blank" rel="noopener"><img src="SALE%20IS%20ON.png" width="1080" height="1350" alt="Sale Is On streetwear sale ad" loading="lazy"></a>
+<a href="SPAGHETTI.png" target="_blank" rel="noopener"><img src="SPAGHETTI.png" width="1080" height="1350" alt="Spaghetti food promo poster" loading="lazy"></a>
+<a href="FEEL_THE_BEAT.png" target="_blank" rel="noopener"><img src="FEEL_THE_BEAT.png" width="1080" height="1350" alt="Feel the Beat Soundcore V1 headphones ad" loading="lazy"></a>
 </div>
 <div>
 <span class="font-label-mono text-xs text-primary mb-2">Graphic Design</span>
 <h3 class="text-2xl font-bold text-white mb-2">Graphic Design Works</h3>
-<p class="text-on-surface-variant max-w-md">Social media posts, event posters, and promo ads for cafes, live events, and streetwear brands.</p>
+<p class="text-on-surface-variant max-w-md">Social media posts, event posters, and promo ads for cafes, food, live events, tech, and streetwear brands.</p>
 </div>
 </div>
 </div>
+
 
 <!-- Small Project 1 -->
 <div class="md:col-span-4 glass-card rounded-3xl overflow-hidden relative group reveal delay-100">
