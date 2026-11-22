@@ -746,10 +746,10 @@
 </div>
 </div>
 </div>
-<form class="space-y-4">
-<input class="w-full bg-surface-container/50 border border-white/10 rounded-xl px-6 py-4 focus:border-primary focus:ring-0 transition-colors text-white font-label-mono placeholder:text-on-surface-variant/40" placeholder="Full Name" type="text"/>
-<input class="w-full bg-surface-container/50 border border-white/10 rounded-xl px-6 py-4 focus:border-primary focus:ring-0 transition-colors text-white font-label-mono placeholder:text-on-surface-variant/40" placeholder="Email Address" type="email"/>
-<textarea class="w-full bg-surface-container/50 border border-white/10 rounded-xl px-6 py-4 focus:border-primary focus:ring-0 transition-colors text-white font-label-mono placeholder:text-on-surface-variant/40" placeholder="Your Message" rows="4"></textarea>
+<form class="space-y-4" action="https://formspree.io/f/xaeopqrq" method="POST">
+        <input name="name" required class="w-full bg-surface-container/50 border border-white/10 rounded-xl px-6 py-4 focus:border-primary focus:ring-0 transition-colors text-white font-label-mono placeholder:text-on-surface-variant/40" placeholder="Full Name" type="text"/>
+<input name="email" required class="w-full bg-surface-container/50 border border-white/10 rounded-xl px-6 py-4 focus:border-primary focus:ring-0 transition-colors text-white font-label-mono placeholder:text-on-surface-variant/40" placeholder="Email Address" type="email"/>
+<textarea name="message" required class="w-full bg-surface-container/50 border border-white/10 rounded-xl px-6 py-4 focus:border-primary focus:ring-0 transition-colors text-white font-label-mono placeholder:text-on-surface-variant/40" placeholder="Your Message" rows="4"></textarea>
 <button class="w-full py-4 energy-gradient rounded-xl font-button-text text-button-text text-on-primary-container font-bold hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-all">Send Message</button>
 </form>
 </div>
