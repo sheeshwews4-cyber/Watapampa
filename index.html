@@ -33,7 +33,109 @@
         .energy-gradient {
             background: linear-gradient(135deg, #00D4FF 0%, #8A2BE2 100%);
         }
-
+.vid-card {
+  background: rgba(16, 19, 30, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 24px;
+  margin: 24px 0;
+}
+.vid-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.vid-head h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+.vid-head .material-symbols-outlined { font-size: 22px; }
+.vid-pill {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+.vid-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+.vid-item { cursor: pointer; }
+.vid-thumb {
+  position: relative;
+  aspect-ratio: 5 / 7;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0d0f15;
+}
+.vid-thumb video {
+  width: 100%;
+  height: calc(100% - 24px);
+  object-fit: cover;
+  display: block;
+  transition: transform .3s;
+}
+.vid-item:hover .vid-thumb video { transform: scale(1.04); }
+.vid-tag {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #22b8ff;
+  color: #0a1220;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.vid-item h4 {
+  margin: 12px 0 2px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+.vid-item p {
+  margin: 0;
+  color: #8b93a3;
+  font-size: 11px;
+}
+.vid-modal {
+  position: fixed; inset: 0; z-index: 9999;
+  display: none; align-items: center; justify-content: center;
+  background: rgba(0, 0, 0, 0.92);
+}
+.vid-modal.open { display: flex; }
+.vid-modal video { max-height: 90vh; max-width: 90vw; border-radius: 14px; }
+.vid-close {
+  position: absolute; top: 18px; right: 26px;
+  background: none; border: 0; color: #fff; font-size: 42px; cursor: pointer;
+}
+@media (max-width: 768px) {
+  .vid-row {
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    grid-auto-columns: 62%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+  }
+  .vid-item { scroll-snap-align: start; }
+  .vid-head { flex-direction: column; align-items: flex-start; }
+}
         .text-gradient {
             background: linear-gradient(135deg, #00D4FF 0%, #8A2BE2 100%);
             -webkit-background-clip: text;
@@ -498,6 +600,64 @@
 </div>
 
 <!-- Small Project 2 -->
+<section class="vid-card md:col-span-12 reveal"> 
+          <div class="vid-head">
+    <h3><span class="material-symbols-outlined">movie_edit</span> Short-form Video Works</h3>
+    <span class="vid-pill">Click a video to watch</span>
+  </div>
+
+  <div class="vid-row">
+    <article class="vid-item" data-src="videos/clip-1.mp4">
+      <div class="vid-thumb">
+        <video src="videos/clip-1.mp4" muted loop playsinline preload="metadata"></video>
+        <span class="vid-tag">Short-form</span>
+      </div>
+      <h4>Clip 1</h4>
+      <p>Viral short-form edit</p>
+    </article>
+
+    <article class="vid-item" data-src="videos/clip-2.mp4">
+      <div class="vid-thumb">
+        <video src="videos/clip-2.mp4" muted loop playsinline preload="metadata"></video>
+        <span class="vid-tag">Short-form</span>
+      </div>
+      <h4>Clip 2</h4>
+      <p>Viral short-form edit</p>
+    </article>
+
+    <article class="vid-item" data-src="videos/clip-3.mp4">
+      <div class="vid-thumb">
+        <video src="videos/clip-3.mp4" muted loop playsinline preload="metadata"></video>
+        <span class="vid-tag">Short-form</span>
+      </div>
+      <h4>Clip 3</h4>
+      <p>Viral short-form edit</p>
+    </article>
+
+    <article class="vid-item" data-src="videos/clip-4.mp4">
+      <div class="vid-thumb">
+        <video src="videos/clip-4.mp4" muted loop playsinline preload="metadata"></video>
+        <span class="vid-tag">Short-form</span>
+      </div>
+      <h4>Clip 4</h4>
+      <p>Viral short-form edit</p>
+    </article>
+
+    <article class="vid-item" data-src="videos/clip-5.mp4">
+      <div class="vid-thumb">
+        <video src="videos/clip-5.mp4" muted loop playsinline preload="metadata"></video>
+        <span class="vid-tag">Short-form</span>
+      </div>
+      <h4>Clip 5</h4>
+      <p>Viral short-form edit</p>
+    </article>
+  </div>
+</section>
+
+<div class="vid-modal" id="vidModal">
+  <button class="vid-close" aria-label="Close">&times;</button>
+  <video id="vidModalPlayer" controls playsinline></video>
+</div>
 <div class="md:col-span-12 glass-card rounded-3xl overflow-hidden relative group reveal delay-200">
 <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkhivuQka61ugpY5FRkE6pI_6INiZt0idy3Y3JYH2mmxoTATDapVP7rzjg8AWyIzYrhZEvUjXfNB3mme6LiLSB5EiiKNgovpDQio-7xt4leu16SgeDWBlcvv4EcRGg_m_ASogoE98zYkNxfUV6LKrL609ylOPZ44VsrKakWpaaxfXAdD-EwBQSQ5Ma_hvVpLKM4fESj4L1e3TV4VhwnAbizjLl9FrGM0tvuGq6QCiZs1szHRgrlI9N"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
@@ -696,6 +856,30 @@
             }
         });
         </script>
+        <script>
+  const vidModal = document.getElementById('vidModal');
+  const vidPlayer = document.getElementById('vidModalPlayer');
+
+  document.querySelectorAll('.vid-item').forEach(item => {
+    const v = item.querySelector('video');
+    item.addEventListener('mouseenter', () => v.play().catch(() => {}));
+    item.addEventListener('mouseleave', () => { v.pause(); v.currentTime = 0; });
+    item.addEventListener('click', () => {
+      vidPlayer.src = item.dataset.src;
+      vidModal.classList.add('open');
+      vidPlayer.play();
+    });
+  });
+
+  function closeVid() {
+    vidModal.classList.remove('open');
+    vidPlayer.pause();
+    vidPlayer.removeAttribute('src');
+  }
+  vidModal.addEventListener('click', e => { if (e.target === vidModal) closeVid(); });
+  document.querySelector('.vid-close').addEventListener('click', closeVid);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeVid(); });
+</script>
  <!-- ===== POSTER POPUP (LIGHTBOX): i-paste ra kini usa ka higayon, sa ibabaw sa </body> ===== -->
 <style>
 .lb-overlay { position: fixed; inset: 0; z-index: 9999; display: none; align-items: center; justify-content: center; background: rgba(5,7,12,.92); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); opacity: 0; transition: opacity .25s ease; }
